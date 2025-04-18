@@ -3,6 +3,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material'
 import App from './App.jsx'
 import useStore from './store/index.js'
 import { darkTheme, lightTheme } from './theme.js';
+import "./i18n"
 
 const Root = ()=>{
   const mode = useStore(state=> state.mode);
