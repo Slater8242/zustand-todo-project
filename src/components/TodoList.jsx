@@ -1,9 +1,9 @@
 import { List, Typography } from "@mui/material";
-import useTodoStore from "../todoStore"
+import useStore from "../store"
 import TodoItem from "./TodoItem";
 
 const TodoList = () => {
-  const todos = useTodoStore(state=> state.todos);
+  const todos = useStore(state=> state.todos);
 
   if(todos.length ===0){
     return <Typography mt={2}>Нет Задач</Typography>

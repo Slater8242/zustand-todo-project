@@ -1,10 +1,10 @@
 import { Checkbox, IconButton, ListItem, ListItemText } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
-import useTodoStore from "../todoStore";
+import useStore from "../store";
 
 const TodoItem = ({todo})=>{
-  const toggleTodo = useTodoStore(state=>state.toggleTodo);
-  const removeTodo = useTodoStore(state=>state.removeTodo);
+  const toggleTodo = useStore(state=>state.toggleTodo);
+  const removeTodo = useStore(state=>state.removeTodo);
   
   return (
     <ListItem

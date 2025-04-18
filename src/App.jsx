@@ -6,13 +6,17 @@ import {
   Typography,
   Box,
   Paper,
+  IconButton,
 } from '@mui/material'
 import TodoList from './components/TodoList'
-import useTodoStore from './todoStore'
+import useStore from './store'
+import { Brightness4, Brightness7 } from '@mui/icons-material'
 
 export default function App() {
   const [input, setInput] = useState('')
-  const addTodo = useTodoStore((state) => state.addTodo)
+  const addTodo = useStore((state) => state.addTodo)
+  const mode = useStore(state=>state.mode)
+  const toggleTheme = useStore(state=>state.toggleTheme)
 
   const handleAdd = () => {
     if (input.trim()) {
@@ -23,6 +27,9 @@ export default function App() {
 
   return (
     <Container maxWidth="sm">
+      <IconButton onClick={toggleTheme} color='inherit'>
+        {mode === 'dark' ? <Brightness7 /> : <Brightness4/> }
+      </IconButton>
       <Typography variant="h4" align="center" gutterBottom mt={4}>
         Todo App
       </Typography>
